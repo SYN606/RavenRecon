@@ -1,22 +1,30 @@
 package cmd
 
 import (
-	"RavenRecon/utils"
+	"RavenRecon/functions"
 	"github.com/spf13/cobra"
+	"log"
 )
 
 var username string
 
+// scanUserCmd represents the scan-user command
 var scanUserCmd = &cobra.Command{
-	Use:   "scan-user",
-	Short: "Scan websites for user information",
-	Args:  cobra.ExactArgs(1),
+	Use:   "scanuser",
+	Short: "Scan for username across websites",
 	Run: func(cmd *cobra.Command, args []string) {
-		username = args[0]
-		utils.ScanWebsites(username)
+		if username == "" {
+			log.Fatal("You must provide a username")
+		}
+		err := functions.SearchUserAcrossWebsites(username)
+		if err != nil {
+			log.Fatal("Error scanning websites:", err)
+		}
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(scanUserCmd)
+
+	scanUserCmd.Flags().StringVarP(&username, "username", "u", "", "The username to scan for")
 }

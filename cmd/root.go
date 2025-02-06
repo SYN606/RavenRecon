@@ -12,7 +12,7 @@ var rootCmd = &cobra.Command{
 	Short: "RavenRecon is an OSINT tool for scanning websites",
 	Run: func(cmd *cobra.Command, args []string) {
 		// If no subcommand is provided, print the usage
-		fmt.Println("Welcome to RavenRecon. Use 'scan-user' command to start scanning.")
+		fmt.Println("Welcome to RavenRecon. Use 'scanuser' command to start scanning.")
 	},
 }
 
