@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"RavenRecon/cmd"
+	// "log"
+)
 
 func main() {
-	fmt.Println("Hello world")
+	cmd.Execute()
 }
