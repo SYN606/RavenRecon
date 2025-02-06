@@ -1,0 +1,34 @@
+# Binaries
+/osint-tool
+
+# Build artifacts
+*.exe
+*.out
+*.a
+
+# Vendor dependencies (if using go mod vendor)
+vendor/
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+*.swo
+
+# IDE and editor files
+.vscode/
+.idea/
+*.iml
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Go-specific files
+bin/
+pkg/
+cover.out
+
+# Go modules cache (optional)
+go.sum
+
